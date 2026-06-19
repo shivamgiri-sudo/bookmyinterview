@@ -33,6 +33,7 @@ import MasterStudio from './MasterStudio.jsx';
 import ReportStudio from './ReportStudio.jsx';
 import FlowStudio from './FlowStudio.jsx';
 import StatusBoard from './StatusBoard.jsx';
+import AssessmentPortal from './AssessmentPortal.jsx';
 
 /* ─── Nav groups ─── */
 const NAV_GROUPS = [
@@ -48,6 +49,7 @@ const NAV_GROUPS = [
     label: 'Hiring',
     items: [
       { path: '/intake', label: 'Intake', icon: ClipboardList },
+      { path: '/assess', label: 'Assessment', icon: Activity },
       { path: '/workspace', label: 'Workspace', icon: BriefcaseBusiness },
       { path: '/talent', label: 'Talent', icon: Users },
       { path: '/engine', label: 'Engine', icon: Zap },
@@ -106,6 +108,7 @@ const ROUTES = {
   '/master': MasterStudio, '/report': ReportStudio, '/flow': FlowStudio,
   '/status': StatusBoard, '/hub': LiveHub, '/vault': VaultOps,
   '/controls': ControlRoom, '/plans': PlansPage, '/cost': CostControlCenter,
+  '/assess': AssessmentPortal,
 };
 
 const pageVariants = {
