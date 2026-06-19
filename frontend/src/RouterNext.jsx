@@ -34,6 +34,7 @@ import ReportStudio from './ReportStudio.jsx';
 import FlowStudio from './FlowStudio.jsx';
 import StatusBoard from './StatusBoard.jsx';
 import AssessmentPortal from './AssessmentPortal.jsx';
+import InterviewScheduler from './InterviewScheduler.jsx';
 
 /* ─── Nav groups ─── */
 const NAV_GROUPS = [
@@ -54,6 +55,7 @@ const NAV_GROUPS = [
       { path: '/talent', label: 'Talent', icon: Users },
       { path: '/engine', label: 'Engine', icon: Zap },
       { path: '/flow', label: 'Flow', icon: Activity },
+      { path: '/schedule', label: 'Schedule', icon: ClipboardList },
     ],
   },
   {
@@ -109,6 +111,7 @@ const ROUTES = {
   '/status': StatusBoard, '/hub': LiveHub, '/vault': VaultOps,
   '/controls': ControlRoom, '/plans': PlansPage, '/cost': CostControlCenter,
   '/assess': AssessmentPortal,
+  '/schedule': InterviewScheduler,
 };
 
 const pageVariants = {
