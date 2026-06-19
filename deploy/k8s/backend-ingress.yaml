@@ -1,0 +1,25 @@
+apiVersion: networking.k8s.io/v1
+kind: Ingress
+metadata:
+  name: bmi-backend-ingress
+  annotations:
+    cert-manager.io/cluster-issuer: "letsencrypt-prod"
+    nginx.ingress.kubernetes.io/ssl-redirect: "true"
+    nginx.ingress.kubernetes.io/rate-limit: "120"
+spec:
+  ingressClassName: nginx
+  tls:
+    - hosts:
+        - api.bookmyinterview.example.com
+      secretName: bmi-backend-tls
+  rules:
+    - host: api.bookmyinterview.example.com
+      http:
+        paths:
+          - path: /
+            pathType: Prefix
+            backend:
+              service:
+                name: bmi-backend
+                port:
+                  number: 80

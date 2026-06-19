@@ -1,0 +1,36 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: bmi-redis
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: bmi-redis
+  template:
+    metadata:
+      labels:
+        app: bmi-redis
+    spec:
+      containers:
+        - name: redis
+          image: redis:7-alpine
+          ports:
+            - containerPort: 6379
+          resources:
+            requests:
+              cpu: 100m
+              memory: 256Mi
+            limits:
+              memory: 512Mi
+---
+apiVersion: v1
+kind: Service
+metadata:
+  name: bmi-redis
+spec:
+  selector:
+    app: bmi-redis
+  ports:
+    - port: 6379
+      targetPort: 6379

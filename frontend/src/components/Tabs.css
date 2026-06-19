@@ -1,0 +1,121 @@
+/* ============================================================
+   Tabs.css — Book My Interview Design System
+   ============================================================ */
+
+.bmi-tabs {
+  display: flex;
+  align-items: center;
+  gap: 4px;
+  overflow-x: auto;
+  scrollbar-width: none;
+  -ms-overflow-style: none;
+}
+
+.bmi-tabs::-webkit-scrollbar { display: none; }
+
+/* ── Underline variant ── */
+.bmi-tabs--underline {
+  border-bottom: 1px solid rgba(255,255,255,.1);
+  padding-bottom: 0;
+  gap: 0;
+  margin-bottom: 24px;
+}
+
+.bmi-tabs--underline .bmi-tab {
+  padding-bottom: 14px;
+  border-bottom: 2px solid transparent;
+  border-radius: 0;
+  background: transparent;
+  margin-bottom: -1px;
+}
+
+.bmi-tabs--underline .bmi-tab--active {
+  border-bottom-color: #67E8F9;
+  color: #67E8F9;
+  background: transparent;
+}
+
+/* ── Pills variant ── */
+.bmi-tabs--pills {
+  background: rgba(255,255,255,.04);
+  border: 1px solid rgba(255,255,255,.08);
+  border-radius: 16px;
+  padding: 5px;
+  margin-bottom: 20px;
+}
+
+.bmi-tabs--pills .bmi-tab {
+  border-radius: 12px;
+}
+
+.bmi-tabs--pills .bmi-tab--active {
+  background: rgba(103,232,249,.15);
+  color: #67E8F9;
+  border-color: rgba(103,232,249,.25);
+}
+
+/* ── Tab button ── */
+.bmi-tab {
+  display: inline-flex;
+  align-items: center;
+  gap: 7px;
+  background: transparent;
+  border: 1px solid transparent;
+  color: #64748B;
+  font: inherit;
+  font-weight: 600;
+  cursor: pointer;
+  white-space: nowrap;
+  transition: color 150ms, background 150ms, border-color 150ms;
+  flex-shrink: 0;
+}
+
+.bmi-tab:focus-visible {
+  outline: 2px solid #67E8F9;
+  outline-offset: 2px;
+}
+
+.bmi-tab:not(.bmi-tab--disabled):hover {
+  color: #CBD5E1;
+}
+
+.bmi-tab--active {
+  color: #F8FAFC;
+}
+
+.bmi-tab--disabled {
+  opacity: 0.4;
+  cursor: not-allowed;
+  pointer-events: none;
+}
+
+/* ── Sizes ── */
+.bmi-tabs--sm .bmi-tab { padding: 8px 12px; font-size: 13px; }
+.bmi-tabs--md .bmi-tab { padding: 11px 16px; font-size: 14px; }
+
+/* ── Icon ── */
+.bmi-tab__icon {
+  display: inline-flex;
+  align-items: center;
+}
+
+.bmi-tab__icon svg {
+  width: 1em;
+  height: 1em;
+}
+
+/* ── Badge ── */
+.bmi-tab__badge {
+  background: rgba(103,232,249,.18);
+  color: #67E8F9;
+  font-size: 11px;
+  font-weight: 700;
+  border-radius: 999px;
+  padding: 1px 7px;
+  min-width: 20px;
+  text-align: center;
+}
+
+.bmi-tab--active .bmi-tab__badge {
+  background: rgba(103,232,249,.25);
+}

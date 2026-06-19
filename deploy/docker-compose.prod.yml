@@ -1,0 +1,65 @@
+services:
+  postgres:
+    image: postgres:16-alpine
+    environment:
+      POSTGRES_DB: bookmyinterview
+      POSTGRES_USER: bmi
+      POSTGRES_PASSWORD: ${POSTGRES_PASSWORD:-change-me}
+    volumes:
+      - postgres_data:/var/lib/postgresql/data
+    ports:
+      - "5432:5432"
+
+  redis:
+    image: redis:7-alpine
+    ports:
+      - "6379:6379"
+    volumes:
+      - redis_data:/data
+
+  backend:
+    build: ../backend
+    environment:
+      APP_ENV: production
+      DATABASE_URL: postgresql+psycopg://bmi:${POSTGRES_PASSWORD:-change-me}@postgres:5432/bookmyinterview
+      ASYNC_DATABASE_URL: postgresql+asyncpg://bmi:${POSTGRES_PASSWORD:-change-me}@postgres:5432/bookmyinterview
+      JWT_SECRET_KEY: ${JWT_SECRET_KEY:-change-me}
+      REDIS_URL: redis://redis:6379/0
+      CELERY_BROKER_URL: redis://redis:6379/0
+      CELERY_RESULT_BACKEND: redis://redis:6379/0
+      LLM_PROVIDER: mock
+      VECTOR_PROVIDER: mock
+      LOG_FORMAT: json
+    depends_on:
+      - postgres
+      - redis
+    ports:
+      - "8000:8000"
+
+  celery-worker:
+    build: ../backend
+    command: celery -A app.tasks.celery_app worker -l info -c 2
+    environment:
+      APP_ENV: production
+      DATABASE_URL: postgresql+psycopg://bmi:${POSTGRES_PASSWORD:-change-me}@postgres:5432/bookmyinterview
+      ASYNC_DATABASE_URL: postgresql+asyncpg://bmi:${POSTGRES_PASSWORD:-change-me}@postgres:5432/bookmyinterview
+      JWT_SECRET_KEY: ${JWT_SECRET_KEY:-change-me}
+      REDIS_URL: redis://redis:6379/0
+      CELERY_BROKER_URL: redis://redis:6379/0
+      CELERY_RESULT_BACKEND: redis://redis:6379/0
+    depends_on:
+      - postgres
+      - redis
+
+  frontend:
+    build: ../frontend
+    environment:
+      VITE_API_BASE_URL: ${VITE_API_BASE_URL:-http://localhost:8000}
+    depends_on:
+      - backend
+    ports:
+      - "5173:5173"
+
+volumes:
+  postgres_data:
+  redis_data:

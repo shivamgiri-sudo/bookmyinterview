@@ -1,0 +1,105 @@
+/* ============================================================
+   Skeleton.css — Book My Interview Design System
+   ============================================================ */
+
+/* ── Shared shimmer ── */
+.bmi-skel {
+  border-radius: 8px;
+  background: linear-gradient(
+    90deg,
+    rgba(255,255,255,.05) 25%,
+    rgba(255,255,255,.1) 50%,
+    rgba(255,255,255,.05) 75%
+  );
+  background-size: 300% 100%;
+  animation: skel-shimmer 1.6s ease-in-out infinite;
+}
+
+@keyframes skel-shimmer {
+  0%   { background-position: 300% 0; }
+  100% { background-position: -300% 0; }
+}
+
+/* ── Skeleton Card ── */
+.bmi-skeleton-card {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  padding: 22px;
+  border-radius: 26px;
+  background: rgba(255,255,255,.04);
+  border: 1px solid rgba(255,255,255,.08);
+}
+
+.bmi-skel--header {
+  height: 20px;
+  width: 45%;
+}
+
+.bmi-skel-lines {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+  margin-top: 6px;
+}
+
+.bmi-skel--line {
+  height: 12px;
+}
+
+/* ── Skeleton Row ── */
+.bmi-skeleton-row {
+  display: flex;
+  align-items: center;
+  gap: 14px;
+  padding: 14px 0;
+  border-bottom: 1px solid rgba(255,255,255,.06);
+}
+
+.bmi-skel--avatar {
+  width: 38px;
+  height: 38px;
+  border-radius: 12px;
+  flex-shrink: 0;
+}
+
+.bmi-skel--badge {
+  width: 60px;
+  height: 22px;
+  border-radius: 999px;
+  flex-shrink: 0;
+}
+
+/* ── Spinner ── */
+.bmi-spinner {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.bmi-spinner svg {
+  animation: spinner-rotate 0.9s linear infinite;
+}
+
+@keyframes spinner-rotate {
+  to { transform: rotate(360deg); }
+}
+
+.bmi-spinner--sm svg { width: 20px; height: 20px; }
+.bmi-spinner--md svg { width: 32px; height: 32px; }
+.bmi-spinner--lg svg { width: 48px; height: 48px; }
+
+.bmi-spinner--cyan  { color: #67E8F9; }
+.bmi-spinner--gold  { color: #F6C453; }
+.bmi-spinner--muted { color: #475569; }
+
+/* ── Screen-reader only ── */
+.sr-only {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  overflow: hidden;
+  clip: rect(0,0,0,0);
+  white-space: nowrap;
+  border: 0;
+}

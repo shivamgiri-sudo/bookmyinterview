@@ -1,0 +1,67 @@
+{
+  "product": "BOOK MY INTERVIEW",
+  "mcp_gateway_policy": {
+    "deny_by_default": true,
+    "tenant_scope_required": true,
+    "audit_every_call": true,
+    "human_approval_for_sensitive_actions": true,
+    "credential_access": "superadmin_integration_vault_only"
+  },
+  "servers": [
+    {
+      "key": "jd_intelligence_mcp",
+      "name": "JD Intelligence MCP",
+      "tools": [
+        {
+          "name": "analyze_hiring_requirement",
+          "endpoint": "/api/mcp/jd-intelligence/analyze",
+          "description": "Analyze raw client requirement, generate JD, detect missing gaps, and recommend follow-up questions."
+        }
+      ]
+    },
+    {
+      "key": "assessment_intelligence_mcp",
+      "name": "Assessment Intelligence MCP",
+      "tools": [
+        {
+          "name": "orchestrate_assessment",
+          "endpoint": "/api/mcp/assessment-intelligence/orchestrate",
+          "description": "Generate assessment path and evaluate audio, video, and final candidate score."
+        }
+      ]
+    },
+    {
+      "key": "candidate_matching_mcp",
+      "name": "Candidate Matching MCP",
+      "tools": [
+        {
+          "name": "match_candidate_to_job",
+          "endpoint": "/api/mcp/candidate-matching/match",
+          "description": "Score candidate-job fit using skills, experience, salary, notice, location, and evidence quality."
+        }
+      ]
+    },
+    {
+      "key": "trait_question_mcp",
+      "name": "Trait Question MCP",
+      "tools": [
+        {
+          "name": "generate_validate_trait_questions",
+          "endpoint": "/api/mcp/trait-question/generate-validate",
+          "description": "Generate, validate, rubric-map, and optionally evaluate trait questions."
+        }
+      ]
+    },
+    {
+      "key": "compliance_mcp",
+      "name": "Compliance MCP",
+      "tools": [
+        {
+          "name": "check_action_policy",
+          "endpoint": "/api/mcp/compliance/check",
+          "description": "Check consent, source approval, protected attributes, auto-decision risk, and audit controls."
+        }
+      ]
+    }
+  ]
+}

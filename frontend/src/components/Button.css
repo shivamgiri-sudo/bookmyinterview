@@ -1,0 +1,162 @@
+/* ============================================================
+   Button.css — Book My Interview Design System
+   ============================================================ */
+
+.bmi-btn {
+  position: relative;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+  border: none;
+  border-radius: 14px;
+  font-family: inherit;
+  font-weight: 700;
+  letter-spacing: 0.01em;
+  cursor: pointer;
+  transition:
+    transform 120ms ease,
+    box-shadow 150ms ease,
+    background 200ms ease,
+    opacity 150ms ease;
+  -webkit-font-smoothing: antialiased;
+  text-decoration: none;
+  white-space: nowrap;
+  user-select: none;
+  outline-offset: 3px;
+}
+
+/* Focus ring — keyboard accessibility */
+.bmi-btn:focus-visible {
+  outline: 2px solid var(--cyan);
+  outline-offset: 3px;
+}
+
+/* Hover lift */
+.bmi-btn:not(.bmi-btn--disabled):hover {
+  transform: translateY(-1px);
+}
+
+.bmi-btn:not(.bmi-btn--disabled):active {
+  transform: translateY(0);
+}
+
+/* ── Sizes ── */
+.bmi-btn--sm {
+  padding: 8px 14px;
+  font-size: 13px;
+  border-radius: 12px;
+  gap: 6px;
+}
+
+.bmi-btn--md {
+  padding: 12px 18px;
+  font-size: 14px;
+}
+
+.bmi-btn--lg {
+  padding: 15px 24px;
+  font-size: 16px;
+  border-radius: 18px;
+  gap: 10px;
+}
+
+/* ── Full width ── */
+.bmi-btn--full {
+  width: 100%;
+}
+
+/* ── Primary ── */
+.bmi-btn--primary {
+  background: linear-gradient(135deg, #F6C453, #67E8F9);
+  color: #0B1020;
+  box-shadow: 0 12px 40px rgba(103, 232, 249, 0.2);
+}
+
+.bmi-btn--primary:not(.bmi-btn--disabled):hover {
+  box-shadow: 0 18px 55px rgba(103, 232, 249, 0.32);
+}
+
+/* ── Ghost ── */
+.bmi-btn--ghost {
+  background: rgba(255, 255, 255, 0.07);
+  color: #CBD5E1;
+  border: 1px solid rgba(255, 255, 255, 0.14);
+}
+
+.bmi-btn--ghost:not(.bmi-btn--disabled):hover {
+  background: rgba(255, 255, 255, 0.12);
+  color: #fff;
+  border-color: rgba(255, 255, 255, 0.22);
+}
+
+/* ── Danger ── */
+.bmi-btn--danger {
+  background: rgba(251, 113, 133, 0.15);
+  color: #FB7185;
+  border: 1px solid rgba(251, 113, 133, 0.25);
+}
+
+.bmi-btn--danger:not(.bmi-btn--disabled):hover {
+  background: rgba(251, 113, 133, 0.25);
+  border-color: rgba(251, 113, 133, 0.45);
+}
+
+/* ── Success ── */
+.bmi-btn--success {
+  background: rgba(52, 211, 153, 0.15);
+  color: #34D399;
+  border: 1px solid rgba(52, 211, 153, 0.25);
+}
+
+.bmi-btn--success:not(.bmi-btn--disabled):hover {
+  background: rgba(52, 211, 153, 0.25);
+  border-color: rgba(52, 211, 153, 0.45);
+}
+
+/* ── Neutral ── */
+.bmi-btn--neutral {
+  background: rgba(255, 255, 255, 0.05);
+  color: #94A3B8;
+  border: 1px solid rgba(255, 255, 255, 0.08);
+}
+
+.bmi-btn--neutral:not(.bmi-btn--disabled):hover {
+  background: rgba(255, 255, 255, 0.09);
+  color: #CBD5E1;
+}
+
+/* ── Disabled ── */
+.bmi-btn--disabled {
+  opacity: 0.45;
+  cursor: not-allowed;
+}
+
+/* ── Loading ── */
+.bmi-btn--loading {
+  cursor: wait;
+}
+
+/* ── Icons ── */
+.btn-icon {
+  display: inline-flex;
+  align-items: center;
+  flex-shrink: 0;
+}
+
+.btn-icon svg {
+  width: 1em;
+  height: 1em;
+}
+
+/* ── Spinner ── */
+.btn-spinner {
+  width: 1em;
+  height: 1em;
+  flex-shrink: 0;
+  animation: btn-spin 0.8s linear infinite;
+}
+
+@keyframes btn-spin {
+  to { transform: rotate(360deg); }
+}

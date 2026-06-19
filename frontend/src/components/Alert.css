@@ -1,0 +1,93 @@
+/* ============================================================
+   Alert.css — Book My Interview Design System
+   ============================================================ */
+
+.bmi-alert {
+  display: flex;
+  align-items: flex-start;
+  gap: 12px;
+  padding: 14px 16px;
+  border-radius: 16px;
+  border: 1px solid transparent;
+  font-size: 14px;
+  line-height: 1.5;
+}
+
+/* ── Types ── */
+.bmi-alert--info {
+  background: rgba(103,232,249,.08);
+  border-color: rgba(103,232,249,.2);
+  color: #BAE6FD;
+}
+.bmi-alert--info .bmi-alert__icon { color: #67E8F9; }
+
+.bmi-alert--success {
+  background: rgba(52,211,153,.08);
+  border-color: rgba(52,211,153,.2);
+  color: #A7F3D0;
+}
+.bmi-alert--success .bmi-alert__icon { color: #34D399; }
+
+.bmi-alert--warning {
+  background: rgba(246,196,83,.08);
+  border-color: rgba(246,196,83,.2);
+  color: #FDE68A;
+}
+.bmi-alert--warning .bmi-alert__icon { color: #F6C453; }
+
+.bmi-alert--error {
+  background: rgba(251,113,133,.08);
+  border-color: rgba(251,113,133,.2);
+  color: #FCA5A5;
+}
+.bmi-alert--error .bmi-alert__icon { color: #FB7185; }
+
+/* ── Parts ── */
+.bmi-alert__icon {
+  flex-shrink: 0;
+  width: 18px;
+  height: 18px;
+  margin-top: 1px;
+}
+
+.bmi-alert__icon svg {
+  width: 100%;
+  height: 100%;
+}
+
+.bmi-alert__content {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  gap: 2px;
+}
+
+.bmi-alert__title {
+  font-weight: 700;
+  display: block;
+}
+
+.bmi-alert__message {
+  opacity: 0.9;
+}
+
+.bmi-alert__close {
+  flex-shrink: 0;
+  background: transparent;
+  border: none;
+  cursor: pointer;
+  color: currentColor;
+  opacity: 0.55;
+  padding: 2px;
+  border-radius: 6px;
+  display: grid;
+  place-items: center;
+  transition: opacity 120ms;
+}
+
+.bmi-alert__close:hover { opacity: 1; }
+
+.bmi-alert__close svg {
+  width: 14px;
+  height: 14px;
+}

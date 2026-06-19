@@ -1,0 +1,14 @@
+from __future__ import annotations
+from sqlalchemy import select
+from sqlalchemy.ext.asyncio import AsyncSession
+from app.db.models import Tenant
+from app.repositories.base import BaseRepository
+
+class TenantRepository(BaseRepository[Tenant]):
+    def __init__(self, session: AsyncSession):
+        super().__init__(session, Tenant)
+
+    async def get_by_slug(self, slug: str) -> Tenant | None:
+        stmt = select(Tenant).where(Tenant.slug == slug)
+        result = await self._session.execute(stmt)
+        return result.scalar_one_or_none()

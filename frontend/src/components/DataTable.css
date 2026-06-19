@@ -1,0 +1,95 @@
+/* ============================================================
+   DataTable.css — Book My Interview Design System
+   ============================================================ */
+
+.bmi-datatable-wrap {
+  overflow-x: auto;
+  border-radius: 20px;
+  border: 1px solid rgba(255,255,255,.1);
+}
+
+.bmi-datatable {
+  width: 100%;
+  border-collapse: collapse;
+  font-size: 14px;
+}
+
+/* ── Head ── */
+.bmi-datatable__head {
+  background: rgba(255,255,255,.04);
+  border-bottom: 1px solid rgba(255,255,255,.1);
+}
+
+.bmi-datatable__th {
+  padding: 12px 16px;
+  text-align: left;
+  font-size: 11px;
+  font-weight: 700;
+  color: #64748B;
+  text-transform: uppercase;
+  letter-spacing: 0.07em;
+  white-space: nowrap;
+  user-select: none;
+}
+
+.bmi-datatable__th--sortable {
+  cursor: pointer;
+  transition: color 150ms;
+}
+
+.bmi-datatable__th--sortable:hover {
+  color: #CBD5E1;
+}
+
+.bmi-datatable__th--sorted {
+  color: #67E8F9;
+}
+
+.bmi-datatable__sort-icon {
+  margin-left: 6px;
+  opacity: 0.5;
+  font-size: 10px;
+}
+
+.bmi-datatable__th--sorted .bmi-datatable__sort-icon {
+  opacity: 1;
+}
+
+/* ── Row ── */
+.bmi-datatable__row {
+  border-bottom: 1px solid rgba(255,255,255,.06);
+  transition: background 120ms;
+}
+
+.bmi-datatable__row:last-child {
+  border-bottom: none;
+}
+
+.bmi-datatable__row:hover {
+  background: rgba(255,255,255,.03);
+}
+
+.bmi-datatable__row--clickable {
+  cursor: pointer;
+}
+
+.bmi-datatable__row--clickable:hover {
+  background: rgba(103,232,249,.04);
+}
+
+.bmi-datatable__row--clickable:focus-visible {
+  outline: 2px solid #67E8F9;
+  outline-offset: -2px;
+}
+
+/* ── Cell ── */
+.bmi-datatable__td {
+  padding: 14px 16px;
+  color: #CBD5E1;
+  vertical-align: middle;
+}
+
+/* ── Empty ── */
+.bmi-datatable--empty {
+  padding: 24px;
+}

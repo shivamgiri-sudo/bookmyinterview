@@ -1,0 +1,149 @@
+/* ============================================================
+   KpiCard.css — Book My Interview Design System
+   ============================================================ */
+
+.bmi-kpi {
+  display: flex;
+  align-items: flex-start;
+  gap: 16px;
+  padding: 22px;
+  border-radius: 24px;
+  background: linear-gradient(180deg, rgba(255,255,255,.1), rgba(255,255,255,.05));
+  border: 1px solid rgba(255,255,255,.12);
+  box-shadow: 0 20px 60px rgba(0,0,0,.28);
+  backdrop-filter: blur(20px);
+  transition: transform 180ms ease, box-shadow 200ms ease;
+}
+
+.bmi-kpi:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 28px 80px rgba(0,0,0,.35);
+}
+
+/* ── Icon wrapper ── */
+.bmi-kpi__icon-wrap {
+  width: 44px;
+  height: 44px;
+  border-radius: 14px;
+  display: grid;
+  place-items: center;
+  flex-shrink: 0;
+  background: rgba(103,232,249,.12);
+  border: 1px solid rgba(103,232,249,.2);
+  color: #67E8F9;
+}
+
+.bmi-kpi__icon-wrap svg {
+  width: 22px;
+  height: 22px;
+}
+
+/* ── Content ── */
+.bmi-kpi__content {
+  flex: 1;
+  min-width: 0;
+}
+
+.bmi-kpi__label {
+  display: block;
+  font-size: 12px;
+  font-weight: 600;
+  color: #94A3B8;
+  text-transform: uppercase;
+  letter-spacing: 0.06em;
+  margin-bottom: 4px;
+}
+
+.bmi-kpi__value {
+  display: block;
+  font-size: 30px;
+  font-weight: 800;
+  letter-spacing: -1.5px;
+  color: #F8FAFC;
+  line-height: 1.1;
+  margin-bottom: 6px;
+}
+
+.bmi-kpi__meta {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  flex-wrap: wrap;
+}
+
+.bmi-kpi__sub {
+  font-size: 12px;
+  color: #64748B;
+}
+
+/* ── Trend ── */
+.bmi-kpi__trend {
+  display: inline-flex;
+  align-items: center;
+  gap: 3px;
+  font-size: 12px;
+  font-weight: 700;
+  border-radius: 999px;
+  padding: 2px 7px;
+}
+
+.bmi-kpi__trend svg {
+  width: 12px;
+  height: 12px;
+}
+
+.bmi-kpi__trend--up {
+  color: #34D399;
+  background: rgba(52,211,153,.12);
+}
+
+.bmi-kpi__trend--down {
+  color: #FB7185;
+  background: rgba(251,113,133,.12);
+}
+
+/* ── Variants (icon accent colors) ── */
+.bmi-kpi--gold .bmi-kpi__icon-wrap {
+  background: rgba(246,196,83,.12);
+  border-color: rgba(246,196,83,.2);
+  color: #F6C453;
+}
+
+.bmi-kpi--violet .bmi-kpi__icon-wrap {
+  background: rgba(167,139,250,.12);
+  border-color: rgba(167,139,250,.2);
+  color: #A78BFA;
+}
+
+.bmi-kpi--green .bmi-kpi__icon-wrap {
+  background: rgba(52,211,153,.12);
+  border-color: rgba(52,211,153,.2);
+  color: #34D399;
+}
+
+.bmi-kpi--danger .bmi-kpi__icon-wrap {
+  background: rgba(251,113,133,.12);
+  border-color: rgba(251,113,133,.2);
+  color: #FB7185;
+}
+
+/* ── Loading skeleton ── */
+.bmi-kpi--loading {
+  pointer-events: none;
+}
+
+.bmi-skeleton-box {
+  border-radius: 8px;
+  background: linear-gradient(90deg,
+    rgba(255,255,255,.05) 25%,
+    rgba(255,255,255,.1) 50%,
+    rgba(255,255,255,.05) 75%
+  );
+  background-size: 200% 100%;
+  animation: skeleton-shimmer 1.5s ease-in-out infinite;
+}
+
+@keyframes skeleton-shimmer {
+  0%   { background-position: 200% 0; }
+  100% { background-position: -200% 0; }
+}

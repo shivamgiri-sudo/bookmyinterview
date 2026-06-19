@@ -1,0 +1,94 @@
+/* ============================================================
+   SectionHeader.css — Book My Interview Design System
+   ============================================================ */
+
+.bmi-section-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 20px;
+  margin-bottom: 24px;
+  flex-wrap: wrap;
+}
+
+.bmi-section-header__left {
+  display: flex;
+  align-items: flex-start;
+  gap: 16px;
+  flex: 1;
+  min-width: 0;
+}
+
+/* ── Icon ── */
+.bmi-section-header__icon {
+  width: 52px;
+  height: 52px;
+  border-radius: 18px;
+  background: rgba(103,232,249,.12);
+  border: 1px solid rgba(103,232,249,.22);
+  color: #67E8F9;
+  display: grid;
+  place-items: center;
+  flex-shrink: 0;
+}
+
+.bmi-section-header__icon svg {
+  width: 24px;
+  height: 24px;
+}
+
+/* ── Sizes: adjust icon ── */
+.bmi-section-header--sm .bmi-section-header__icon {
+  width: 40px;
+  height: 40px;
+  border-radius: 14px;
+}
+.bmi-section-header--sm .bmi-section-header__icon svg {
+  width: 18px;
+  height: 18px;
+}
+.bmi-section-header--lg .bmi-section-header__icon {
+  width: 64px;
+  height: 64px;
+  border-radius: 22px;
+}
+.bmi-section-header--lg .bmi-section-header__icon svg {
+  width: 30px;
+  height: 30px;
+}
+
+/* ── Text ── */
+.bmi-section-header__title {
+  margin: 0;
+  font-size: 28px;
+  font-weight: 800;
+  letter-spacing: -0.8px;
+  color: #F8FAFC;
+  line-height: 1.1;
+}
+
+.bmi-section-header--sm .bmi-section-header__title {
+  font-size: 20px;
+  letter-spacing: -0.4px;
+}
+
+.bmi-section-header--lg .bmi-section-header__title {
+  font-size: 38px;
+  letter-spacing: -1.5px;
+}
+
+.bmi-section-header__subtitle {
+  margin: 5px 0 0;
+  font-size: 14px;
+  color: #64748B;
+  line-height: 1.55;
+}
+
+.bmi-section-header--lg .bmi-section-header__subtitle {
+  font-size: 16px;
+}
+
+/* ── Action slot ── */
+.bmi-section-header__action {
+  flex-shrink: 0;
+}

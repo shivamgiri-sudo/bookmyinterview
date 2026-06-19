@@ -1,0 +1,37 @@
+/* ============================================================
+   ScoreBar.css — Book My Interview Design System
+   ============================================================ */
+
+.bmi-scorebar {
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+}
+
+.bmi-scorebar__meta {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.bmi-scorebar__label {
+  font-size: 13px;
+  color: #CBD5E1;
+  font-weight: 500;
+}
+
+.bmi-scorebar__value {
+  font-size: 13px;
+  color: #F8FAFC;
+  font-weight: 700;
+  font-variant-numeric: tabular-nums;
+}
+
+.bmi-scorebar__track {
+  overflow: hidden;
+  width: 100%;
+}
+
+.bmi-scorebar__fill {
+  display: block;
+}

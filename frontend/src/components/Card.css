@@ -1,0 +1,103 @@
+/* ============================================================
+   Card.css — Book My Interview Design System
+   ============================================================ */
+
+.bmi-card {
+  position: relative;
+  overflow: hidden;
+  transition: transform 180ms ease, box-shadow 200ms ease;
+}
+
+/* ── Variants ── */
+.bmi-card--glass {
+  background: linear-gradient(180deg, rgba(255,255,255,.1), rgba(255,255,255,.05));
+  border: 1px solid rgba(255,255,255,.14);
+  box-shadow: 0 30px 90px rgba(0,0,0,.35);
+  backdrop-filter: blur(24px);
+  -webkit-backdrop-filter: blur(24px);
+}
+
+.bmi-card--solid {
+  background: #0D1220;
+  border: 1px solid rgba(255,255,255,.1);
+}
+
+.bmi-card--outline {
+  background: transparent;
+  border: 1px solid rgba(255,255,255,.14);
+}
+
+.bmi-card--elevated {
+  background: rgba(13,18,32,.85);
+  border: 1px solid rgba(255,255,255,.12);
+  box-shadow: 0 40px 120px rgba(0,0,0,.5);
+  backdrop-filter: blur(32px);
+}
+
+/* ── Padding ── */
+.bmi-card--pad-sm .bmi-card__body { padding: 14px; }
+.bmi-card--pad-md .bmi-card__body { padding: 22px; }
+.bmi-card--pad-lg .bmi-card__body { padding: 32px; }
+
+/* ── Radius ── */
+.bmi-card--r-sm  { border-radius: 14px; }
+.bmi-card--r-md  { border-radius: 20px; }
+.bmi-card--r-lg  { border-radius: 26px; }
+.bmi-card--r-xl  { border-radius: 36px; }
+
+/* ── Glow ── */
+.bmi-card--glow-cyan {
+  box-shadow: 0 0 0 1px rgba(103,232,249,.18), 0 30px 90px rgba(0,0,0,.35);
+}
+.bmi-card--glow-cyan::before {
+  content: '';
+  position: absolute;
+  inset: -40%;
+  background: radial-gradient(circle at 50% 0%, rgba(103,232,249,.12), transparent 55%);
+  pointer-events: none;
+  z-index: 0;
+}
+
+.bmi-card--glow-gold {
+  box-shadow: 0 0 0 1px rgba(246,196,83,.18), 0 30px 90px rgba(0,0,0,.35);
+}
+.bmi-card--glow-gold::before {
+  content: '';
+  position: absolute;
+  inset: -40%;
+  background: radial-gradient(circle at 50% 0%, rgba(246,196,83,.1), transparent 55%);
+  pointer-events: none;
+  z-index: 0;
+}
+
+.bmi-card--glow-violet {
+  box-shadow: 0 0 0 1px rgba(167,139,250,.18), 0 30px 90px rgba(0,0,0,.35);
+}
+.bmi-card--glow-violet::before {
+  content: '';
+  position: absolute;
+  inset: -40%;
+  background: radial-gradient(circle at 50% 0%, rgba(167,139,250,.1), transparent 55%);
+  pointer-events: none;
+  z-index: 0;
+}
+
+/* ── Card zones ── */
+.bmi-card__header {
+  padding: 18px 22px 0;
+  position: relative;
+  z-index: 1;
+}
+
+.bmi-card__body {
+  position: relative;
+  z-index: 1;
+}
+
+.bmi-card__footer {
+  padding: 0 22px 18px;
+  border-top: 1px solid rgba(255,255,255,.08);
+  margin-top: 4px;
+  position: relative;
+  z-index: 1;
+}
